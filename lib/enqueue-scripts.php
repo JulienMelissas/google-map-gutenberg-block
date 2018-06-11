@@ -1,6 +1,6 @@
 <?php
 
-namespace Gutenberg_Courses\Example_Blocks;
+namespace Google_Map_Block;
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_editor_assets' );
 /**
@@ -13,7 +13,7 @@ function enqueue_block_editor_assets() {
 
 	// Enqueue the bundled block JS file
 	wp_enqueue_script(
-		'jsforwp-blocks-js',
+		'googlemapblock-js',
 		_get_plugin_url() . $block_path,
 		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
 		filemtime( _get_plugin_directory() . $block_path )
@@ -21,7 +21,7 @@ function enqueue_block_editor_assets() {
 
 	// Enqueue optional editor only styles
 	wp_enqueue_style(
-		'jsforwp-blocks-editor-css',
+		'googlemapblock-editor-css',
 		_get_plugin_url() . $style_path,
 		[ 'wp-blocks' ],
 		filemtime( _get_plugin_directory() . $style_path )
@@ -35,7 +35,7 @@ add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_assets' );
 function enqueue_assets() {
 	$style_path = '/assets/css/blocks.style.css';
 	wp_enqueue_style(
-		'jsforwp-blocks',
+		'googlemapblock-frontend-css',
 		_get_plugin_url() . $style_path,
 		[ 'wp-blocks' ],
 		filemtime( _get_plugin_directory() . $style_path )
@@ -55,7 +55,7 @@ function enqueue_frontend_assets() {
 
 	$block_path = '/assets/js/frontend.blocks.js';
 	wp_enqueue_script(
-		'jsforwp-blocks-frontend',
+		'googlemapblock-frontend-js',
 		_get_plugin_url() . $block_path,
 		[],
 		filemtime( _get_plugin_directory() . $block_path )

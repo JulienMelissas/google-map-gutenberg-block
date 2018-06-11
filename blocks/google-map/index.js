@@ -14,22 +14,22 @@ const { TextControl, PanelBody } = wp.components;
  * Register example block
  */
 export default registerBlockType(
-	'jsforwpblocks/google-map',
+	'googlemapblock/google-map',
 	{
-		title: __( 'Example - Google Map Block', 'jsforwpblocks' ),
-		description: __( 'An example of a advanced block to build a Google Map.', 'jsforwpblocks'),
+		title: __( 'Google Map Block', 'googlemapblock' ),
+		description: __( 'An advanced Gutenberg Block that allows you to build an interactive Google Map.', 'googlemapblock'),
 		category: 'common',
 		icon: 'location-alt',
 		keywords: [
-			__( 'Meta', 'jsforwpblocks' ),
-			__( 'Map', 'jsforwpblocks' ),
-			__( 'Google Maps', 'jsforwpblocks' ),
+			__( 'Meta', 'googlemapblock' ),
+			__( 'Map', 'googlemapblock' ),
+			__( 'Google Maps', 'googlemapblock' ),
 		],
 		attributes: {
 			text: {
 				type: 'string',
 				source: 'meta',
-				meta: 'jsforwpblocks_gb_googlemap',
+				meta: 'googlemapblock_gb_googlemap',
 			},
 		},
 		edit: props => {
@@ -39,7 +39,7 @@ export default registerBlockType(
 					<InspectorControls>
 						<PanelBody>
 							<TextControl
-								label={ __( 'Google Map Block', 'jsforwpblocks' ) }
+								label={ __( 'Google Map Block', 'googlemapblock' ) }
 								value={ text }
 								onChange={ text => setAttributes( { text } ) }
 							/>
@@ -47,13 +47,13 @@ export default registerBlockType(
 					</InspectorControls>
 				),
 				<div className={ className } >
-					<p>{ __( 'Check the meta bitch!', 'jsforwpblocks' ) }</p>
+					<p>{ __( 'Check the meta yo!', 'googlemapblock' ) }</p>
 				</div>
 			];
 		},
 		save: props => {
 			return (
-				<p>{ __( 'Check the meta', 'jsforwpblocks' ) }</p>
+				<p>{ __( 'Check the meta', 'googlemapblock' ) }</p>
 			);
 		},
 	},
