@@ -1,6 +1,6 @@
 {
-  "name": "jsforwp-blocks",
-  "version": "2.0.0",
+  "name": "google-map-gutenberg-block",
+  "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "scripts": {
